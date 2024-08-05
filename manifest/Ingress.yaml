@@ -21,32 +21,31 @@ spec:
                 port:
                   number: 80
 
-    - host: grafana.countyemi.site
-      http:
-        paths:
-          - pathType: Prefix
-            path: /
-            backend:
-              service:
-                name: prometheus-grafana 
-                port:
-                  number: 80
+    # - host: grafana.countyemi.site
+    #   http:
+    #     paths:
+    #       - pathType: Prefix
+    #         path: /
+    #         backend:
+    #           service:
+    #             name: prometheus-grafana 
+    #             port:
+    #               number: 80
     
-    - host: prometheus.countyemi.site
-      http:
-        paths:
-          - pathType: Prefix
-            path: /
-            backend:
-              service:
-                name: prometheus-kube-prometheus-prometheus
-                port:
-                  number: 8080
+    # - host: prometheus.countyemi.site
+    #   http:
+    #     paths:
+    #       - pathType: Prefix
+    #         path: /
+    #         backend:
+    #           service:
+    #             name: prometheus-kube-prometheus-prometheus
+    #             port:
+    #               number: 8080
 
   tls:
     - hosts:
-        - prometheus.countyemi.site
-        - grafana.countyemi.site
+
         - sock.countyemi.site
       secretName: tls-secret
 
